@@ -5,12 +5,11 @@ public class Main {
         GameProgress jade = new GameProgress(100, 100, 10, 1_000);
         GameProgress kira = new GameProgress(90, 90, 9, 900);
         GameProgress kitana = new GameProgress(80, 80, 8, 800);
-        Save saveGame = new Save();
-        Zip zip = new Zip();
 
-        saveGame.saveGame(jade, "c://Games/save_jade.dat");
-        saveGame.saveGame(kira, "c://Games/save_kira.dat");
-        saveGame.saveGame(kitana, "c://Games/save_kitana.dat");
-        zip.zipFiles("c://Games/save.zip", saveGame.list);
+        jade.saveGame(jade,"c://Games/savegames/save_jade.dat");
+        kira.saveGame(kira, "c://Games/savegames/save_kira.dat");
+        kitana.saveGame(kitana, "c://Games/savegames/save_kitana.dat");
+
+        GameProgress.zipFiles("c://Games/savegames/save.zip", GameProgress.list);
     }
 }
